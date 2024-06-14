@@ -6,7 +6,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Gallery
+import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -26,7 +29,27 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         val g: Gallery = findViewById(R.id.gallery)
         g.adapter = PhotoAdapter(this)
         g.setOnItemClickListener(this)
+        val spinner: Spinner = findViewById(R.id.spinner)
+        val arrayAdapter = ArrayAdapter.createFromResource(
+            this, R.array.codes,
+            androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item
+        )
+        spinner.adapter = arrayAdapter
+        spinner.onItemSelectedListener = SpinnerCallback()
     }
+
+    inner class SpinnerCallback : AdapterView.OnItemSelectedListener {
+        override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            val message = resources.getStringArray(R.array.versions)[position]
+            val t: TextView = findViewById<TextView>(R.id.textView)
+            t.text = "你所選取的是:${message}"
+        }
+        override fun onNothingSelected(parent: AdapterView<*>?) {
+            val t: TextView = findViewById<TextView>(R.id.textView)
+            t.text = "沒有內容可選取"
+        }
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main, menu)
@@ -48,3 +71,4 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         Toast.makeText(this, "第${1 + position}個圖被點擊了", Toast.LENGTH_SHORT).show()
     }
 }
+
