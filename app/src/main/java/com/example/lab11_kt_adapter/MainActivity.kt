@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent()
         when (item.itemId) {
             R.id.lab1 -> intent.setClass(this, Adapter1::class.java)
+            R.id.lab2 -> intent.setClass(this, Adapter2::class.java)
         }
         startActivity(intent)
         return super.onOptionsItemSelected(item)
