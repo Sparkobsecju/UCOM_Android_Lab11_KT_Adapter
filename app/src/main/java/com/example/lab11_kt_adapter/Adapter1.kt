@@ -2,10 +2,6 @@ package com.example.lab11_kt_adapter
 
 import android.app.ListActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-
-import android.app.ListActivity
-import android.os.Bundle
 import android.view.ContextMenu
 import android.view.View
 import android.widget.AdapterView.AdapterContextMenuInfo
