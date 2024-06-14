@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Lab11_KT_Adapter</string>
+    <string-array name="income_placeholder">
+        <item>jan-3000</item>
+        <item>feb-12000</item>
+        <item>mar-11000</item>
+        <item>apr-31000</item>
+    </string-array>
 </resources>
