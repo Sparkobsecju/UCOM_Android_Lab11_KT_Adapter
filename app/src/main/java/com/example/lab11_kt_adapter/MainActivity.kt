@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         when (item.itemId) {
             R.id.lab1 -> intent.setClass(this, Adapter1::class.java)
             R.id.lab2 -> intent.setClass(this, Adapter2::class.java)
+            R.id.lab3 -> intent.setClass(this, Adapter3::class.java)
         }
         startActivity(intent)
         return super.onOptionsItemSelected(item)

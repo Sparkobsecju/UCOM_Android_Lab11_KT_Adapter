@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Adapter1" />
-        <activity android:name=".Adapter2"/>
+        <activity android:name=".Adapter2" />
+        <activity android:name=".Adapter3" />
+
     </application>
 
 </manifest>
