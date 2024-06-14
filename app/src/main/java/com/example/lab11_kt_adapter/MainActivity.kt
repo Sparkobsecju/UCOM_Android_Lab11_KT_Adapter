@@ -1,7 +1,9 @@
 package com.example.lab11_kt_adapter
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,5 +24,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val intent = Intent()
+        when (item.itemId) {
+            R.id.lab1 -> intent.setClass(this, Adapter1::class.java)
+        }
+        startActivity(intent)
+        return super.onOptionsItemSelected(item)
     }
 }
